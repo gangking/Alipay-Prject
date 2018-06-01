@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>开场秀</title>
+    <link rel="stylesheet" href="font_style_xg/iconfont.css"/>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            perspective: 380px;
+            text-align: center;
+        }
+
+        i {
+            font-style: normal;
+        }
+
+        .oldelboxbgimg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 638px;
+            background: url(images/bodybg_dragon_xg.png) no-repeat center;
+            background-size: cover;
+            overflow: hidden;
+            transition: all 0.6s;
+            /*animation: xingrotate 100s linear infinite alternate;*/
+        }
+
+        /*大背景*/
+        .oldelboxbg {
+            width: 100%;
+            height: 638px;
+            background: transparent;
+            background-size: cover;
+            overflow: hidden;
+            transition: all 0.6s;
+        }
+
+        .onebox {
+            width: 40px;
+            /*width: 1160px;*/
+            height: 345px;
+            text-align: center;
+            background-color: #eedc00;
+            margin: 100px auto;
+            transform-origin: top center;
+            transform: rotateX(50deg) translate3d(0, 0, 200px);
+            transition: all 0.6s linear;
+            position: relative;
+            display: none;
+        }
+
+        .onebox span {
+            display: inline-block;
+            font-family: '楷体';
+            font-size: 66px;
+            height: 310px;
+            line-height: 310px;
+            letter-spacing: 8px;
+            color: #00bbee;
+            text-shadow: 4px 4px 2px #00bbee;
+            transition: all 0.5s;
+            box-sizing: border-box;
+            padding: 0px 10px;
+            background: white;
+            margin-top: 18px;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .onebox .divLeft, .onebox .divRight {
+            height: 380px;
+            width: 60px;
+            position: absolute;
+            z-index: 10;
+            top: -16px;
+        }
+
+        .onebox .divLeft {
+            background: transparent url(images/holyPaper_left_xg_03_03.png) no-repeat left top;
+            background-size: contain;
+            left: -15px;
+        }
+
+        .onebox .divRight {
+            background: transparent url(images/holyPaper_right_xg_03.png) no-repeat left top;
+            background-size: contain;
+            right: -43px;
+        }
+
+        /*五个浮现出来的div*/
+        .memberlist {
+            position: absolute;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            top: 100px;
+            left: 86px;
+            display: none;
+        }
+
+        .memberlist li {
+            width: 200px;
+            height: 300px;
+            float: left;
+            position: relative;
+            left: 0;
+            bottom: 0px;
+            margin-right: 50px;
+            transition: all 0.6s;
+            transform-origin: center;
+        }
+
+        .memberlist li div {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: center;
+            transition: all 2s;
+            line-height: 300px;
+            font-family: '楷体';
+            font-size: 160px;
+        }
+
+        /*卡牌第一次展示块*/
+        .memberlist li .member {
+            color: #00bbee;
+            background-color: #ffa20a;
+            /*box-shadow: 0 0 10px #000;*/
+            transform: rotateY(0deg);
+            border-top: 10px solid #000;
+            border-bottom: 10px solid #000;
+            border-radius: 10px;
+            opacity: 1;
+        }
+
+        /*卡牌翻转后文本展示块*/
+        .memberlist li .memberTxt {
+            color: #eee90b;
+            z-index: 10;
+            /*background: url(music/kaipaibgtxt_03.png) no-repeat center center;*/
+            background: #fff;
+
+            transform: rotateY(-90deg);
+            box-shadow: 0 0 10px #6ff5fc;
+            opacity: 0;
+        }
+
+        @keyframes motionOne {
+            10% {
+                bottom: 20px;
+            }
+            20% {
+                bottom: -20px;
+            }
+            30% {
+                bottom: 20px;
+            }
+            40% {
+                bottom: -20px;
+            }
+            50% {
+                bottom: 20px;
+            }
+            60% {
+                bottom: -20px;
+            }
+            70% {
+                bottom: 20px;
+            }
+            80% {
+                bottom: -20px;
+            }
+            90% {
+                bottom: 20px;
+            }
+            100% {
+                bottom: -20px;
+            }
+        }
+
+        @keyframes motionTwo {
+            10% {
+                bottom: -20px;
+            }
+            20% {
+                bottom: 20px;
+            }
+            30% {
+                bottom: -20px;
+            }
+            40% {
+                bottom: 20px;
+            }
+            50% {
+                bottom: -20px;
+            }
+            60% {
+                bottom: 20px;
+            }
+            70% {
+                bottom: -20px;
+            }
+            80% {
+                bottom: 20px;
+            }
+            90% {
+                bottom: -20px;
+            }
+            100% {
+                bottom: 20px;
+            }
+        }
+
+        .memberlist li:last-child {
+            margin-right: 0px;
+        }
+
+        /*添加动画*/
+        .memberlist li:nth-child(1) {
+            animation: motionOne 20s infinite alternate;
+        }
+
+        .memberlist li:nth-child(2) {
+            animation: motionTwo 20s infinite alternate;
+        }
+
+        .memberlist li:nth-child(3) {
+            animation: motionOne 20s infinite alternate;
+        }
+
+        .memberlist li:nth-child(4) {
+            animation: motionTwo 20s infinite alternate;
+        }
+
+        .memberlist li:nth-child(5) {
+            animation: motionOne 20s infinite alternate;
+        }
+
+        /*鼠标经过时暂停动画*/
+        .memberlist li:hover {
+            animation: paused;
+        }
+
+        /*星图旋转动画*/
+        @keyframes xingrotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+/*大背景图*/
+<div class="oldelboxbgimg">
+
+</div>
+<!--大盒子-->
+<div class="oldelboxbg">
+    <!--背景音乐1-->
+    <audio src="music/bgmOne.mp3"></audio>
+    <!--圣旨到-->
+    <div class="onebox">
+        <div class="divLeft"></div>
+        <span id="title">
+        <i>前</i>
+        <i>端</i>
+        <i>9</i>
+        <i>期</i>
+        <i>-</i>
+        <i>支</i>
+        <i>付</i>
+        <i>宝</i>
+        <i>项</i>
+        <i>目</i>
+        </span>
+
+        <div class="divRight"></div>
+    </div>
+
+    <!--浮现出五个成员div-->
+    <ul class="memberlist">
+        <li>
+            <div style="background: url(music/kapai_one_xg.jpg) no-repeat center center;background-size: contain;"
+                 class="member"></div>
+            <div class="memberTxt"></div>
+        </li>
+        <li>
+            <div style="background: url(music/kapai_two_xg.jpg) no-repeat center center;background-size: contain;"
+                 class="member"></div>
+            <div class="memberTxt"></div>
+        </li>
+        <li>
+            <div style="background: url(music/kapai_three_xg.jpg) no-repeat center center;background-size: contain;"
+                 class="member"></div>
+            <div class="memberTxt"></div>
+        </li>
+        <li>
+            <div style="background: url(music/kapai_four_xg.jpg) no-repeat center center;background-size: contain;"
+                 class="member"></div>
+            <div class="memberTxt"></div>
+        </li>
+        <li>
+            <div style="background: url(music/kapai_five_xg.jpg) no-repeat center center;background-size: contain;"
+                 class="member"></div>
+            <div class="memberTxt"></div>
+        </li>
+    </ul>
+</div>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+    var clickflag = true;
+    $('audio').get(0).load();//重新加载音乐
+    $('audio').get(0).play();//播放音乐
+    var step = 1;
+    //    $(document).click(function () {
+    //1s后开始动画
+    setTimeout(function () {
+        if (clickflag) {
+            clickflag = false;
+            //打开圣旨事件
+            console.log($('.onebox'));
+            $('.onebox').fadeIn().css('transform', 'rotateX(0deg) translate3d(0, 0, 0px)')
+                    .animate({width: 1160}, 20, 'linear', function () {
+                        //显示圣旨内容
+                        $('#title').animate({opacity: 1}, 1500);
+                    });
+            $(document).click(function () {
+                //5秒后，圣旨完全消失
+                $('.onebox').fadeOut(2000).animate({left: -1000}, function () {
+                    //开始模块浮动
+                    $('.memberlist').fadeIn(1000);
+                    //触摸li时让member中的文本层旋转
+                    $('.memberlist').children('li').mouseenter(function () {
+                        $(this).children('div').eq(0)
+                                .css('transform', 'rotateY(115deg)')
+                                .css('opacity', '0')
+                                .next().css('transform', 'rotateY(0deg)')
+                                .css('opacity', '1');
+                    })
+                    //离开时li时复原
+                    $('.memberlist').children('li').mouseleave(function () {
+                        $(this).children('div').eq(0)
+                                .css('transform', 'rotateY(0deg)')
+                                .css('opacity', '1')
+                                .next().css('transform', 'rotateY(-90deg)')
+                                .css('opacity', '0');
+                    })
+
+                    //5秒后依次翻转图
+                    setTimeout(function () {
+                        setTimeout(turnimg(0), 8);
+                        setTimeout(function () {
+                            setTimeout(turnimg(1), 8);
+                            setTimeout(function () {
+                                setTimeout(turnimg(2), 8);
+                                setTimeout(function () {
+                                    setTimeout(turnimg(3), 8);
+                                    setTimeout(function () {
+                                        setTimeout(turnimg(4), 8);
+                                        //翻转完图片后,停1秒后再次点击屏幕，全体上移并消失
+                                        $(document).click(function () {
+                                            $('.memberlist').children('li').animate({top: -20}, 100, function () {
+                                                $(this).css('opacity', '0');
+                                                window.location.href = '开场动画二探照灯.html';
+                                            })
+                                        })
+                                    }, 1000)
+                                }, 1000)
+                            }, 1000)
+                        }, 1000)
+                    }, 3000);
+                });
+            })
+        }
+    }, 1000)
+
+
+    //依次翻图封装事件
+    function turnimg(i) {
+        $('.memberlist').children('li').animate({bottom: 0}, 800, function () {
+            $('.memberlist').children('li').eq(i).children('div').eq(0)
+                    .css('transform', 'rotateY(115deg)')
+                    .css('opacity', '0')
+                    .next().css('transform', 'rotateY(0deg)')
+                    .css('opacity', '1');
+            var txtbox = $('.memberlist').children('li').eq(i).children('div').eq(1);
+            switch (i) {
+                case 0:
+                    $(txtbox).text('梦');
+                    break;
+                case 1:
+                    $(txtbox).text('想');
+                    break;
+                case 2:
+                    $(txtbox).text('天');
+                    break;
+                case 3:
+                    $(txtbox).text('空');
+                    break;
+                case 4:
+                    $(txtbox).text('组');
+                    break;
+            }
+        })
+    }
+</script>
+</body>
+</html>

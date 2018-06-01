@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 1);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            transition: all 2s;
+        }
+
+        .bgvideo {
+            width: 100%;
+            height: 642px;
+            background-color: #000;
+            position: absolute;
+            z-index: 0;
+        }
+        .bgvideo video {
+            display: none;
+            float: left;
+            width: 100%;
+        }
+
+        .map {
+            position: relative;
+            width: 810px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        /*标题坂*/
+        .txtbox {
+            width: 810px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            color: rgba(0, 0, 0, 0.8);
+            background-color: transparent;
+            /*background-color: #000;*/
+            z-index: 2;
+            font-size: 100px;
+            text-align: center;
+            font-family: '楷体';
+            font-weight: bold;
+            /*animation: shadow 15s;*/
+        }
+
+        .txtbox p {
+            padding: 0;
+            margin: 0;
+        }
+
+        span {
+            display: block;
+            font-size: 80px;
+            width: 320px;
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+            position: absolute;
+            z-index: 1;
+            font-family: '楷体';
+            font-weight: bold;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        span i {
+            display: inline-block;
+            font-size: 80px;
+            font-style: normal;
+        }
+
+        /*探照灯*/
+        .searchlight {
+            width: 140px;
+            height: 140px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 46px;
+            left: 64px;
+            box-shadow: 0 0 10px #fff;
+            opacity: 0.8;
+            z-index: 0;
+            /*animation: dengmove 16s;*/
+        }
+
+        .searchlight div {
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            position: absolute;
+            top: 50%;
+            margin-top: -1px;
+            transform-origin: center;
+        }
+
+        .searchlight div:first-child {
+            transform: rotate(90deg);
+        }
+
+        /*探照灯移动动画:终点588px*/
+        @keyframes dengmove {
+            /*照标题*/
+            0% {
+                left: 64px;
+            }
+            50% {
+                left: 588px;
+                top: 46px;
+                width: 140px;
+                height: 140px;
+            }
+            /*照名字*/
+            60% {
+                width: 240px;
+                height: 240px;
+                left: -244px;
+                top: 209px;
+            }
+            70% {
+                left: 20px;
+                top: 437px;
+                box-shadow: 0 0 50px #fff;
+            }
+            80% {
+                left: 196px;
+                top: 229px;
+                box-shadow: 0 0 10px #fff;
+            }
+            90% {
+                left: 509px;
+                top: 369px;
+                box-shadow: 0 0 50px #fff;
+            }
+            95% {
+                left: 653px;
+                top: 208px;
+                box-shadow: 0 0 10px #fff;
+            }
+            100% {
+                width: 240px;
+                height: 240px;
+                left: 653px;
+                top: 208px;
+            }
+        }
+
+        /*文字伸缩效果*/
+        @keyframes shadowSize {
+            0% {
+                transform: scale(1);text-shadow: 0 0 0px #fff;
+            }
+            50% {
+                transform: scale(1.1);text-shadow: 0 0 20px #fff;
+            }
+            100% {
+                transform: scale(1);text-shadow: 0 0 0px #fff;
+            }
+        }
+        /*文字变色*/
+        @keyframes shadowColor {
+            0% {
+                text-shadow: 0 0 0px #fefffd;
+            }
+            50% {
+                text-shadow: 0 0 20px #fff80f;
+            }
+            100% {
+                text-shadow: 0 0 0px #fffcf9;
+            }
+        }
+
+        /*探照灯照到文字阴影效果*/
+        @keyframes shadow {
+            0% {
+                text-shadow: -9px 0 4px rgba(0, 0, 0, 0.8);
+            }
+            10% {
+                text-shadow: 9px 0 4px rgba(0, 0, 0, 0.8);
+            }
+            20% {
+                text-shadow: -9px 0 4px rgba(0, 0, 0, 0.8);
+            }
+            30% {
+                text-shadow: 9px 0 4px rgba(0, 0, 0, 0.8);
+            }
+            40% {
+                text-shadow: -9px 0 4px rgba(0, 0, 0, 0.8);
+            }
+            50% {
+                text-shadow: 9px 0 4px rgba(0, 0, 0, 0.8);
+            }
+            60% {
+                text-shadow: -9px 0 4px rgba(0, 0, 0, 0.8);
+            }
+            70% {
+                text-shadow: 9px 0 4px rgba(0, 0, 0, 0.8);
+            }
+            80% {
+                text-shadow: -9px 0 4px rgba(0, 0, 0, 0.8);
+            }
+            90% {
+                text-shadow: 9px 0 4px rgba(0, 0, 0, 0.8);
+            }
+            100% {
+                text-shadow: -9px 0 4px rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        /*组员名位子坐标*/
+        .name1 {
+            left: -280px;
+            top: 280px;
+        }
+
+        .name2 {
+            left: -30px;
+            top: 500px;
+        }
+
+        .name3 {
+            left: 615px;
+            top: 280px;
+        }
+
+        .name4 {
+            left: 152px;
+            top: 285px;
+        }
+
+        .name5 {
+            left: 470px;
+            top: 438px;
+        }
+
+        .titleText {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 300px;
+            line-height: 150px;
+            margin-top: -150px;
+            margin-left: -200px;
+            text-align: center;
+            font-size: 60px;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .shutter {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            margin-left: -10px;
+            margin-top: -10px;
+            background-color: transparent;
+            transition: all 2s;
+            z-index: 1;
+        }
+
+        .shutter div {
+            position: absolute;
+            width: 100%;
+            height: 57%;
+            top: 21%;
+            background-color: transparent;
+            z-index: 2;
+        }
+
+        .shutter div::before,
+        .shutter div::after {
+            position: absolute;
+            content: '';
+            height: 1000px;
+            width: 2000px;
+            background: #343434;
+            transform: rotate(30deg) skew(30deg);
+            border-right: 2px solid #000;
+            border-left: 2px solid #000;
+        }
+
+        .shutter div::before {
+            bottom: 0;
+            right: 100%;
+            transform-origin: 100% 100%;
+        }
+
+        .shutter div::after {
+            top: 0;
+            left: 100%;
+            transform-origin: 0 0;
+        }
+
+        .shutter div:nth-child(2) {
+            transform: rotate(60deg);
+        }
+
+        .shutter div:nth-child(3) {
+            transform: rotate(120deg);
+        }
+
+        .shutter.open {
+            width: 176vw;
+            height: 176vw;
+            margin-left: -88vw;
+            margin-top: -88vw;
+            transform: rotate(180deg);
+        }
+
+        input {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 5555;
+        }
+    </style>
+</head>
+<body>
+<div class="bgvideo">
+    <!--<video src="video/indexVideo.mp4" id="bgvideo"></video>-->
+</div>
+<!--动画背景-->
+<div class="map">
+    <!--文字板-->
+    <div class="txtbox">
+        <p>团队成员</p>
+    </div>
+    <!--组员名-->
+    <span class="name1">熊刚</span>
+    <span class="name2">黄鹏</span>
+    <span class="name3">张瑞东</span>
+    <span class="name4">王英俊</span>
+    <span class="name5">谢增铮</span>
+
+    <!--探照灯-->
+    <div class="searchlight">
+        <div class="across"></div>
+        <div class="vertical"></div>
+    </div>
+    <div class="searchlight"></div>
+</div>
+<!--遮挡层-->
+<div class="shutter" id="shutter">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<!--背景音乐-->
+<audio src="music/linglingqi.mp3"></audio>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+        $(function () {
+            //打开音乐
+            $('audio').get(0).load();
+            $('audio').get(0).play();
+            //打开相机
+            setTimeout(function () {
+                var shutter = document.getElementById('shutter');
+                shutter.className = 'shutter open';
+            },1000)
+            setTimeout(function () {
+                //打开探照灯动画
+                $('.searchlight').css('animation', 'dengmove 15s');
+                $('span').css('animation', 'shadow 15s');
+                $('.txtbox').css('animation', 'shadow 15s');
+                //定时器
+                setTimeout(function () {
+                    $('.searchlight').fadeOut(function () {
+
+                        $('body').css({'background':'url(music/niubi.gif) no-repeat center center',
+                            'background-size':'cover'});
+                        var video = $('<video src="video/huoyan.mp4" id="bgvideo" autoplay loop></video>');
+                        $('.bgvideo').append(video);
+                        //开始播放视频
+                        playVideo();
+                        var len = $('.map').children('span').length;
+                        for (var i = 0; i < len; i++) {
+                            switch (i) {
+                                case 0:
+                                    $('.map').children('span').eq(i).css({'left':'199px','top':'280px','font-size':'60px'}).html('<i>组长：</i>黄鹏');
+                                    break;
+                                case 1:
+                                    $('.map').children('span').eq(i).css({'left':'-262px','top':'280px','font-size':'60px'}).html('<i>技术：</i>熊刚');
+                                    break;
+                                case 2:
+                                    $('.map').children('span').eq(i).css({'left':'638px','top':'280px','font-size':'60px'}).html('<i>技术：</i>张瑞东');
+                                    break;
+                                case 3:
+                                    $('.map').children('span').eq(i).css({'left':'470px','top':'436px','font-size':'60px'}).html('<i>技术：</i>王英俊');
+                                    break;
+                                case 4:
+                                    $('.map').children('span').eq(i).css({'left':'-30px','top':'436px','font-size':'60px'}).html('<i>技术：</i>谢增铮');
+                                    break;
+                            }
+                        }
+                    });
+                    setTimeout(function () {
+                        $('i').css({'animation':'shadowSize 3s infinite'});
+                        $('span').css({'animation':'shadowColor 5s infinite'});
+                        $('.txtbox').css({'animation':'shadowSize 3s infinite'});
+                        //点击页面跳转至支付宝首页
+                        $(document).click(function () {
+                            $('audio').get(0).pause();
+                            window.location.href = 'index_xg.html';
+                        })
+                    }, 3000)
+                }, 14000);
+            }, 1000)
+            //封装播放背景视频函数
+            function playVideo() {
+                //启动背景视频
+                $('#bgvideo').css('display','block');
+            }
+        })
+
+</script>
+</body>
+</html>

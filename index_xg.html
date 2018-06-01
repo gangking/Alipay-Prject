@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>支付宝 知托付！</title>
+    <link rel="shortcut icon" href="favicon_index_xg.ico"/>
+    <link rel="stylesheet" href="font_style_xg/iconfont.css"/>
+    <link rel="stylesheet" href="css/common_xg.css"/>
+    <link rel="stylesheet" href="css/index_xg.css"/>
+    <link rel="stylesheet" href="css/list_xg.css"/>
+</head>
+<body>
+<!--头部开始-->
+<header>
+    <div class="head w" id="head">
+        <a href="#" class="selecColor">个人</a>
+        <a href="#">企业</a>
+        <a href="financial.html">合作伙伴</a>
+        <ul class="webserve">
+            <li><a href="#">支付宝APP</a></li>
+            <li id="trianglebox">
+                <a href="#">客户服务</a>
+
+                <div class="triangle" id="triangle"></div>
+                <div class="selectServe" id="selectServe">
+                    <a href="#">服务大厅</a><br/>
+                    <a href="#">自助服务</a><br/>
+                    <a href="#">提建议</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>
+<!--头部结束-->
+<!--固定导航栏-->
+<div class="fixednav">
+    <div class="navMain w">
+        <ul class="finavlist">
+            <li><a href="#" class="selecColor">首页</a></li>
+            <li><a href="#">财富中心</a></li>
+            <li><a href="#">安全保障</a></li>
+            <li><a href="#">商家中心</a></li>
+            <li><a href="#">开放平台</a></li>
+        </ul>
+        <div class="loginRgister" id="loginRgister">
+            <input type="button" value="登录"/>
+            <a href="javascrpt:;" id="registerav">注册</a>
+        </div>
+
+    </div>
+</div>
+<!--弹出的登录窗口-->
+<div class="popupbg" id="popupbg">
+    <div class="popuplogin">
+        <span id="closeLogin">×</span>
+        <h3>扫码登录</h3>
+        <div class="popuporCode">
+        </div>
+        <p>请使用手机支付宝扫码</p>
+
+        <p><a href="javascript:;" id="useHalp">使用帮助</a><a href="javascript:;">下载手机支付宝</a></p>
+        <!--扫一扫提示图片-->
+        <div class="scanPrompt" id="scanPrompt"></div>
+        <!--<img src="images/lun1_jingling_xg.png" alt="扫一扫提示图片"/>-->
+    </div>
+</div>
+
+<!--背景视频-->
+<div class="divVideo" id="divVideo">
+    <video src="video/indexVideo.mp4" id="bgvideo"></video>
+</div>
+<!--固定按钮-->
+<!--向下翻页按钮-->
+<span id="bottombtn"></span>
+<!--轮播球型按钮-->
+<div id="lunboqiubtn">
+    <ol id="olist">
+        <li class="bgcolor"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</div>
+
+<!--轮播图-->
+<div class="spellspicture">
+    <ul id="list">
+        <li>
+            <div class="h1title" id="h1title">
+                <div class="loginbtn" id="loginbtn">登 录</div>
+                <div class="register" id="register">立即注册</div>
+                <span id="videoPlay"></span>
+            </div>
+        </li>
+        <li>
+            <div class="twolistbg" id="twolistbg">
+            </div>
+            <!--文本描述图-->
+            <div class="textImg" id="textImg1">
+            </div>
+            <!--人像图-->
+            <div class="figure">
+                <!--<img src="images/lun2_xg.png" alt=""/>-->
+            </div>
+            <!--底部遮盖栏-->
+            <div class="btomtwozhe">
+                <div class="renminbi">
+                    <i class="iconfont">&#xe63c;</i>
+                </div>
+                <div class="renminbitxt">
+                    <p>转账付款</p>
+                    <span>转到支付宝账户，瞬间到账 ｜ 转到银行卡两小时到账</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="threelistbg" id="threelistbg">
+                <!--手机扫码特效-->
+                <!--扫码机-->
+                <div class="scanCode" id="scanCode">
+                    <img src="images/lun3_saoma_xg.png" alt=""/>
+                </div>
+                <!--手机二维码-->
+                <div class="phoneorCode" id="phoneorCode">
+                    <img src="images/lun3_qrcode_xg.png" alt=""/>
+                </div>
+
+                <!--底部遮盖栏-->
+                <div class="btomtwozhe">
+                    <!--扫描二维码-->
+                    <div class="boxre1">
+                        <div class="renminbi">
+                            <i class="iconfont">&#xe65b;</i>
+                        </div>
+                        <div class="renminbitxt">
+                            <p>扫描二维码或者条码付款</p>
+                            <span>自动识别不安全链接，安心付款</span>
+                        </div>
+                    </div>
+
+                    <!--出示付款码-->
+                    <div class="boxre1">
+                        <div class="renminbi">
+                            <i class="iconfont">&#xe639;</i>
+                        </div>
+                        <div class="renminbitxt">
+                            <p>出示付款码付款</p>
+                            <span>付款码每次不同，保障付款安全</span>
+                        </div>
+                    </div>
+
+                    <!--通过声波收付款-->
+                    <div class="boxre1 boxrestyle">
+                        <div class="renminbi">
+                            <i></i>
+                        </div>
+                        <div class="renminbitxt">
+                            <p>通过声波收付款</p>
+                            <span>没有网络也能收付款</span>
+                        </div>
+                    </div>
+                </div>
+                <!--结个账没那么好奇吧-->
+                <div class="textthreeImg" id="textImg2">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="fourlistbg" id="fourlistbg"></div>
+            <!--底部遮盖栏-->
+            <div class="btomtwozhe">
+                <!--国际运输-->
+                <div class="boxre1">
+                    <div class="renminbi">
+                        <i class="iconfont">&#xe607;</i>
+                    </div>
+                    <div class="renminbitxt">
+                        <p>国际运输</p>
+                        <span>如淘宝般简单，无需办理转运</span>
+                    </div>
+                </div>
+
+                <!--品牌正品-->
+                <div class="boxre1">
+                    <div class="renminbi">
+                        <i class="iconfont">&#xe630;</i>
+                    </div>
+                    <div class="renminbitxt">
+                        <p>品牌正品</p>
+                        <span>海外商家直发，100%正品保证</span>
+                    </div>
+                </div>
+
+                <!--人民币付款-->
+                <div class="boxre1 boxrestyle">
+                    <div class="renminbi">
+                        <i></i>
+                    </div>
+                    <div class="renminbitxt">
+                        <p>人民币付款</p>
+                        <span>无需外币兑换税，无需双币种信用卡</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--就是要这种范儿-->
+            <div class="textfourImg" id="textImg3">
+            </div>
+        </li>
+        <li>
+            <div class="fivelistbg" id="fivelistbg">
+                <!--底部遮盖栏-->
+                <div class="btomtwozhe">
+                    <!--赚的更多-->
+                    <div class="boxre2">
+                        <div class="renminbi">
+                            <i class="iconfont">&#xe60c;</i>
+                        </div>
+                        <div class="renminbitxt">
+                            <p>赚的更多</p>
+                            <span>定期稳定收益，让你赚的更多</span>
+                        </div>
+                    </div>
+
+                    <!--安全保障-->
+                    <div class="boxre2">
+                        <div class="renminbi">
+                            <i class="iconfont">&#xe611;</i>
+                        </div>
+                        <div class="renminbitxt">
+                            <p>安全保障</p>
+                            <span>权威金融机构负责风险管理</span>
+                        </div>
+                    </div>
+
+                    <!--买的方便-->
+                    <div class="boxre2">
+                        <div class="renminbi">
+                            <i class="iconfont">&#xf02c7;</i>
+                        </div>
+                        <div class="renminbitxt">
+                            <p>买的方便</p>
+                            <span>一键预约购买，自动匹配成交</span>
+                        </div>
+                    </div>
+
+                    <!--灵活变现-->
+                    <div class="boxre2 boxrestyle">
+                        <div class="renminbi">
+                            <i class="iconfont">&#xe63a;</i>
+                        </div>
+                        <div class="renminbitxt">
+                            <p>灵活变现</p>
+                            <span>产品到期前，急用钱时可提前变现</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--就是要这种范儿-->
+                <div class="textfiveImg" id="textImg4">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="sixlistbg" id="sixlistbg"></div>
+            <!--底部遮盖栏-->
+            <div class="btomtwozhe">
+                <!--挂号-->
+                <div class="boxre2">
+                    <div class="renminbi">
+                        <i class="iconfont">&#xe60d;</i>
+                    </div>
+                    <div class="renminbitxt">
+                        <p>挂号</p>
+                        <span>余额查询，足不出户就能挂号</span>
+                    </div>
+                </div>
+
+                <!--智能导诊-->
+                <div class="boxre2">
+                    <div class="renminbi">
+                        <i class="iconfont">&#xe605;</i>
+                    </div>
+                    <div class="renminbitxt">
+                        <p>智能导诊</p>
+                        <span>呼叫与导航，按时到达科室不迷路</span>
+                    </div>
+                </div>
+
+                <!--付医药费-->
+                <div class="boxre2">
+                    <div class="renminbi">
+                        <i class="iconfont">&#xe606;</i>
+                    </div>
+                    <div class="renminbitxt">
+                        <p>付医药费</p>
+                        <span>手机支付，各类医药费边走边付</span>
+                    </div>
+                </div>
+
+                <!--查看报告-->
+                <div class="boxre2 boxrestyle">
+                    <div class="renminbi">
+                        <i class="iconfont">&#xe612;</i>
+                    </div>
+                    <div class="renminbitxt">
+                        <p>查看报告</p>
+                        <span>消息通知，随时随地查看就诊报告</span>
+                    </div>
+                </div>
+            </div>
+            <!--去医院我不排队-->
+            <div class="textsixImg" id="textImg5">
+            </div>
+        </li>
+        <li>
+            <!--轮播尾页分为两个部分-->
+            <!--第一部分支付宝其他业务介绍-->
+            <div class="business">
+                <!--版心-->
+                <div class="typePage" id="typePage">
+                    <!--版心上部分内容-->
+                    <div class="typePagetop" id="typePagetop">
+                        <ul>
+                            <li>
+                                <p><i class="iconfont">&#xe6aa;</i><span> 付款是件容易的事</span></p>
+
+                                <p class="foncolor"><a href="javascript:;">付款方式</a> | <a
+                                        href="javascript:;">131家金融机构</a></p>
+                            </li>
+                            <li>
+                                <p><i class="iconfont">&#xe61d;</i><span> 会员保障，安心付款</span></p>
+
+                                <p class="foncolor"><a href="#">安全升级</a> | <a href="javascript:;">应急服务</a> ｜
+                                    <a href="javascript:;">理赔服务</a></p>
+                            </li>
+                            <li>
+                                <p><i class="iconfont">&#xe62e;</i><span> 海外商品想购就购</span></p>
+
+                                <p class="foncolor"><a href="javascript:;">全球直购</a> | <a href="javascript:;">海外直邮</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p><i class="iconfont">&#xe736;</i><span> 玩转支付宝</span></p>
+
+                                <p class="foncolor"><a href="javascript:;">如何购物</a> | <a href="javascript:;">新手须知</a> ｜
+                                    <a href="javascript:;">我要开店</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--版心下部分内容-->
+                    <div class="typePagebtom" id="typePagebtom">
+                        <ul>
+                            <li>
+                                <p><a href="javascript:;">支付宝收费规则</a> <i>｜</i> <a href="javascript:;">支付宝服务协议</a></p>
+
+                                <p><a href="javascript:;">支付宝隐私权政策</a> <i>｜</i> <a href="javascript:;">蚂蚁金服客户权益保障承诺书</a>
+                                </p>
+
+                                <p><span>公告 </span><a href="javascript:;">变更支付宝服务协议公告</a></p>
+
+                                <p class="txtellips">　　<a href="javascript:;">《关于防范和打击电信网络诈骗的通告》</a>
+                                </p>
+                            </li>
+                            <li>
+                                <P>支付官方微博　<a href="javascript:;" style="text-decoration: underline">+关注</a></P>
+                            </li>
+                            <li class="weilastlist">
+                                <p>下载支付宝</p>
+                                <img src="images/lun7_qrCode_xg.jpg" alt="下载二维码"/>
+                            </li>
+                            <li class="lastlist">
+                                <h4>支付宝E公益</h4>
+
+                                <p>帮助听力障碍儿童，献爱心。</p>
+                                <input type="button" value="立即查看"/>
+                                <img src="images/lun7_lastlibg_xg.jpg" alt=""/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--第二部分友情链接-->
+            <div class="links" id="links">
+                <p class="firstp">
+                    <a href="javascript:;" target="_blank">诚征英才</a>
+                    <a href="javascript:;" target="_blank">联系我们</a>
+                    <a href="javascript:;" target="_blank">International Business</a>
+                    <span>沪ICP备15027489号</span>
+                </p>
+
+                <p>
+                    <a href="javascript:;" target="_blank">蚂蚁金服集团</a>
+                    <a href="javascript:;" target="_blank">支付宝</a>
+                    <a href="javascript:;" target="_blank">余额宝</a>
+                    <a href="javascript:;" target="_blank">招财宝</a>
+                    <a href="javascript:;" target="_blank">芝麻信用</a>
+                    <a href="javascript:;" target="_blank">蚂蚁微贷</a>
+                    <a href="javascript:;" target="_blank">网商银行</a>
+                    <a href="javascript:;" target="_blank">蚂蚁达客</a>
+                </p>
+
+                <p>
+                    <a href="javascript:;" target="_blank">阿里巴巴集团</a>
+                    <a href="javascript:;" target="_blank">淘宝网</a>
+                    <a href="javascript:;" target="_blank">天猫</a>
+                    <a href="javascript:;" target="_blank">聚划算</a>
+                    <a href="javascript:;" target="_blank">全球速卖通</a>
+                    <a href="javascript:;" target="_blank">阿里巴巴国际交易市场</a>
+                    <a href="javascript:;" target="_blank">1688</a>
+                    <a href="javascript:;" target="_blank">阿里妈妈</a>
+                    <a href="javascript:;" target="_blank">阿里旅行·去啊</a>
+                    <a href="javascript:;" target="_blank">阿里云计算</a>
+                    <a href="javascript:;" target="_blank">YunOS</a>
+                    <a href="javascript:;" target="_blank">阿里通信</a>
+                    <a href="javascript:;" target="_blank">万网</a>
+                    <a href="javascript:;" target="_blank">高德</a>
+                    <a href="javascript:;" target="_blank">优视</a>
+                    <a href="javascript:;" target="_blank">友盟</a>
+                    <a href="javascript:;" target="_blank">虾米</a>
+                    <a href="javascript:;" target="_blank">天天动听</a>
+                    <a href="javascript:;" target="_blank">来往</a>
+                    <a href="javascript:;" target="_blank">钉钉</a>
+                </p>
+
+                <div class="btomjlimg" id="#btomjlimg">
+                    <div class="btombox"></div>
+                    <div class="btombox"></div>
+                    <div class="btombox"></div>
+                    <div class="btombox"></div>
+                    <div class="btombox"></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/common_xg.js"></script>
+<script src="js/indexStyle_xg.js"></script>
+<script src="js/twolunbo_xg.js"></script>
+
+</body>
+</html>

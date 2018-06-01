@@ -1,0 +1,1010 @@
+header {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(6, 16, 36, .2);
+    opacity: 0.8;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9999999999999999999999999999999999999999999;
+}
+
+header:hover {
+    background-color: rgba(6, 16, 36, 1);
+}
+
+@font-face {
+    /* 声明字体 */
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?8qhwk5');
+    src: url('../fonts/icomoon.eot?8qhwk5#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?8qhwk5') format('truetype'),
+    url('../fonts/icomoon.woff?8qhwk5') format('woff'),
+    url('../fonts/icomoon.svg?8qhwk5#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*头部版心*/
+.headmain {
+    width: 1242px;
+    height: 100%;
+    margin: 0 auto;
+    background: transparent url(../images/financia/finan_logo_xg.png) no-repeat left center;
+    background-size: 173px 50px;
+    position: relative;
+}
+
+/*头部导航*/
+.listnav {
+    float: left;
+    margin-left: 200px;
+}
+
+.listnav li {
+    float: left;
+    font-size: 14px;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.headmain li a {
+    color: white;
+    cursor: pointer;
+}
+
+/*下拉选项*/
+#headmain li .hezuoption {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    /*bottom: -105px;*/
+    left: 0;
+    visibility: hidden;
+}
+
+.headmain li .hezuoption p {
+    font-size: 15px;
+    line-height: 35px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.headmain li .hezuoption p:hover {
+    color: #108EE9;
+}
+
+.headmain li:hover a {
+    color: #108EE9;
+}
+
+.headmain li span {
+    display: block;
+    font-family: 'icomoon';
+    height: 12px;
+    width: 12px;
+    line-height: 12px;
+    float: right;
+    margin-left: 7px;
+    margin-top: 18px;
+    transform-origin: center center;
+    /*transition: all 1s;*/
+}
+
+.headmain .spanhover {
+    transform: rotateX(180deg);
+
+}
+
+/*右侧导航栏*/
+.rightnav {
+    /*width: ;*/
+    /*float: right;*/
+    position: absolute;
+    height: 50px;
+    right: 0;
+    top: 16px;
+    /*line-height: 50px;*/
+}
+
+.rightlistnav {
+    float: right;
+    margin-left: 200px;
+}
+
+.rightlistnav li {
+    float: left;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: white;
+    position: relative;
+}
+
+.rightlistnav .border {
+    border-right: 1px solid #6a707c;
+}
+
+.headmain li i {
+    font-family: 'icomoon';
+    font-style: normal;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.rightlistnav li input {
+    width: 82px;
+    height: 30px;
+    margin-top: -9px;
+    border-radius: 4px;
+    color: white;
+    border: 1px solid white;
+    background-color: transparent;
+}
+
+.rightlistnav li input[type="button"]:hover {
+    color: #108EE9;
+    border: 1px solid #108EE9;
+}
+
+.rightlistnav li span {
+    margin-top: 2px;
+}
+
+/*搜索框*/
+.rightlistnav li:first-child {
+    position: relative;
+    /*background-color: #52ff3d;*/
+    line-height: 28px;
+}
+
+.searchbox {
+    /*width: 252px;*/
+    width: 20px;
+    height: 28px;
+    background-color: transparent;
+    /*background-color: #394662;*/
+    position: absolute;
+    right: 0px;
+    /*right: -214px;*/
+    top: -4px;
+    transition: all 1s;
+    padding-left: 5px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    z-index: 5555;
+}
+
+#searchbox input[type="text"] {
+    font-size: 14px;
+    color: white;
+    border: 0;
+    margin-top: 0px;
+    /*margin-left: 10px;*/
+    position: absolute;
+    left: 35px;
+    top: 0;
+    width: 210px;
+}
+
+/*<!--头部结束-->*/
+/*<!--轮播页面开始-->*/
+.broadcast {
+    width: 100%;
+    height: 550px;
+    background-color: #fbff24;
+    position: relative;
+    overflow: hidden;
+}
+
+.broadcast img {
+    position: absolute;
+    left: 50%;
+    margin-left: -960px;
+    top: 0;
+    display: none;
+}
+
+.broadcast img:first-child {
+    display: block;
+}
+
+/*遮盖层*/
+.hidelayer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*轮播图按钮*/
+.broadbtn {
+    height: 8px;
+    width: 126px;
+    position: absolute;
+    left: 50%;
+    margin-left: -83px;
+    bottom: 50px;
+    background-color: transparent;
+}
+
+.broadbtn li {
+    float: left;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #8da5cf;
+    margin: 0 5px;
+    cursor: pointer;
+    /*按下变色#d1dbec*/
+}
+
+.broadbtn .broadbtnColor {
+    background-color: #d1dbec;
+}
+
+/*提示文字*/
+.banner-admodel_txt {
+    width: 800px;
+    position: absolute;
+    top: 175px;
+    left: 50%;
+    margin-left: -600px;
+    text-align: left;
+    z-index: 3;
+    background-color: transparent;
+}
+
+.banner-admodel_txt h1 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 100;
+    transition: all 0.5s;
+}
+.banner-admodel_txt p {
+    font-size: 20px;
+    color: #fff;
+    line-height: 32px;
+    transition: all 0.5s;
+}
+
+
+/*扫码登录*/
+.saomalongin {
+    width: 284px;
+    height: 295px;/*随内容的高度而撑开*/
+    border: 1px solid transparent;
+    background: rgba(0,0,0,.5) url(../images/loginbgconputer.png) no-repeat right top;
+    border-radius: 5px;
+    position: absolute;
+    right: 66px;
+    bottom: 126px;
+    text-align: center;
+}
+.saomalongin h3 {
+    font-size: 18px;
+    font-weight: 100;
+    color: white;
+    margin-top: 33px;
+    margin-bottom: 25px;
+}
+.saomalongin p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFF;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.saomalongin p a {
+    color: #FFF;
+}
+.saomalongin p a:hover {
+    text-decoration: underline;
+}
+
+/*扫描提示图片*/
+.scanPrompt {
+    width: 150px;
+    height: 185px;
+    background: url(../images/lun1_jingling_xg.png) no-repeat;
+    background-position: 0 -323px;
+    position: absolute;
+    right: -75px;
+    bottom: 56px;
+    opacity: 0;
+    transition: all 1s;
+}
+
+
+/*二维码*/
+.saomalongin .qrCodebox {
+    display: inline-block;
+    width: 136px;
+    height: 136px;
+    background: white url(../images/financia/final_qrCode_xg.png) no-repeat center center;
+    background-size: 120px 120px;
+    /*padding: 20px;*/
+    border: 1px solid #6c6c6c;
+}
+
+/*底部公告*/
+.btmnotice {
+    width: 1242px;
+    height: 38px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -621px;
+    background-color: transparent;
+    line-height: 38px;
+    /*overflow: hidden;*/
+}
+
+.btmnotice i {
+    float: left;
+    font-style: normal;
+    font-family: 'icomoon';
+    font-size: 22px;
+    color: white;
+}
+
+#more {
+    float: right;
+}
+
+#more i {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#more i:hover {
+    color: #108EE9;
+}
+
+.btmnotice a {
+    display: block;
+    float: left;
+    width: 220px;
+    height: 100%;
+    line-height: 38px;
+    margin-right: 120px;
+    background-color: transparent;
+    font-size: 14px;
+    color: white;
+    position: relative;
+}
+
+.btmnotice a b {
+    position: absolute;
+    left: 80px;
+    top: 0;
+    height: 100%;
+    width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btmnotice a:hover b {
+    color: #108EE9;
+}
+
+.btmnotice .afirst {
+    margin-left: 6px;
+}
+
+.btmnotice a span {
+    font-size: 14px;
+}
+
+.btmnotice a b {
+    font-weight: normal;
+}
+
+.finanew {
+    width: 28px;
+    height: 17px;
+    background: url(../images/financia/fina_new_xg.png) no-repeat left top;
+    background-size: contain;
+    position: absolute;
+    right: -34px;
+    top: 11px;
+}
+
+/*商业合作开始*/
+.businescoll {
+    height: 578px;
+    background-color: transparent;
+    text-align: center;
+    overflow: hidden;
+}
+
+.businescoll h1 {
+    margin-top: 44px;
+    font-weight: normal;
+    font-size: 30px;
+    color: #38425c;
+}
+
+.businescoll h1 span {
+    padding-bottom: 16px;
+    border-bottom: 2px solid #108ee9;
+}
+
+/*版心*/
+.businessMain {
+    width: 1240px;
+    height: 380px;
+    margin: 58px auto;
+    background-color: transparent;
+}
+
+.busMainplay, .busMainindus {
+    width: 599px;
+    height: 380px;
+    background-color: transparent;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05)
+}
+
+.busMainplay:hover, .busMainindus:hover {
+    border: 1px solid #108ee9;
+    box-shadow: 0 3px 10px 0 rgba(16, 142, 233, 0.25);
+}
+
+.busMainplay {
+    float: left;
+}
+
+.busMainindus {
+    float: right;
+}
+
+/*标题部分*/
+.businesstitle {
+    width: 100%;
+    height: 140px;
+    background: url(../images/financia/finan_busines_title_xg.png) no-repeat;
+    background-size: contain;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.businesstitle h2 {
+    font-size: 30px;
+    font-weight: normal;
+    margin: 40px 0 10px 0;
+}
+
+.businesstitle p {
+    font-size: 16px;
+}
+
+/*栏目部分*/
+.buscolumn {
+    width: 100%;
+    text-align: center;
+}
+
+.buscolumn ul {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.buscolumn li {
+    float: left;
+    margin-right: 68px;
+    position: relative;
+    cursor: pointer;
+}
+
+.buscolumn li .divbusc {
+    /*float: left;*/
+    width: 68px;
+    height: 68px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 1px solid #b9def8;
+    /*margin-right: 68px;*/
+    position: relative;
+}
+
+.buscolumn li:hover .divbusc {
+    border: 1px solid #108EE9
+}
+
+.buscolumn li:hover p {
+    color: #108EE9;
+}
+
+.buscolumn li:last-child {
+    margin-right: 0px;
+}
+
+.buscolumn .rbuscolist li {
+    margin-right: 38px;
+}
+
+.buscolumn .rbuscolist li:last-child {
+    margin-right: 0px;
+}
+
+.buscolumn li img {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    top: 50%;
+    margin-top: -18px;
+    left: 50%;
+    margin-left: -18px;
+}
+
+.buscolumn p {
+    margin-top: 14px;
+    font-size: 16px;
+    color: #1a1a1a;
+}
+
+/*按钮*/
+.buscolumn input[type="button"] {
+    margin-top: 40px;
+    background-color: transparent;
+    font-family: 'icomoon';
+    font-size: 16px;
+    color: #38425c;
+    text-align: center;
+    /*color: #108ee9;*/
+    /*border:1px solid #108ee9;*/
+    border: 1px solid transparent;
+    padding: 10px 45px 10px 30px;
+    border-radius: 4px;
+}
+
+.busMainplay:hover input[type="button"], .busMainindus:hover input[type="button"] {
+    color: #108ee9;
+    border: 1px solid #108ee9;
+}
+
+/*快速开发*/
+.quickexploit {
+    height: 588px;
+    background: transparent url(../images/financia/quickexploit_bg_xg.png) no-repeat center center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.quickexploit h1 {
+    margin-top: 44px;
+    font-weight: normal;
+    font-size: 30px;
+    color: #38425c;
+}
+
+.quickexploit h1 span {
+    padding-bottom: 16px;
+    border-bottom: 2px solid #108ee9;
+}
+
+.quikeMain {
+    height: 325px;
+    width: 1240px;
+    margin: 58px auto;
+    background-color: transparent;
+    position: relative;
+}
+
+/*快速开发栏目*/
+.quikecolumn {
+    width: 406px;
+    height: 100%;
+    background: #fff;
+    float: left;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.quikecolumn:hover {
+    box-shadow: 0 2px 10px 0 rgba(16, 142, 233, 0.20);
+    border: 1px solid #108ee9;
+}
+
+.quikeMain .auto {
+    position: absolute;
+    left: 50%;
+    margin-left: -203px;
+    top: 0;
+}
+
+.quikebg {
+    width: 100%;
+    height: 100%;
+    float: left;
+    transition: all 0.1s linear;
+}
+
+.quikecolumn:hover .quikebg {
+    margin-top: -88px;
+}
+
+.quikeMain .rightquike {
+    float: right;
+}
+
+.quikeMain img {
+    margin-top: 68px;
+    width: 84px;
+    height: 84px;
+    /*transition: all 0.2s;*/
+}
+
+.quikeMain .quikecolumn:hover img {
+    visibility: hidden;
+}
+
+.quikecolumn h3 {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 24px;
+}
+
+.quikecolumn p {
+    font-size: 12px;
+    color: #888;
+}
+
+.quikecolumn input[type="button"] {
+    padding: 10px 60px 10px 48px;
+    border-radius: 4px;
+    font-family: 'icomoon';
+    font-size: 16px;
+    color: #38425c;
+    text-align: center;
+    margin-top: 40px;
+    background-color: transparent;
+    border: 1px solid #108ee9;
+    visibility: hidden;
+    /*transition: all 0.2s;*/
+}
+
+.quikeMain .quikecolumn:hover input[type="button"] {
+    visibility: visible;
+}
+
+/*开放能力版图*/
+.openDomain {
+    height: 1088px;
+    width: 100%;
+    background: url(../images/financia/open_domainbg_xg.png) no-repeat center center;
+    text-align: center;
+    overflow: hidden;
+
+}
+
+.openDomain h1 {
+    margin-top: 44px;
+    font-weight: normal;
+    font-size: 30px;
+    color: #38425c;
+}
+
+.openDomain h1 span {
+    padding-bottom: 16px;
+    border-bottom: 2px solid #108ee9;
+}
+
+/*版心*/
+.openMain {
+    height: 620px;
+    width: 1240px;
+    margin: 180px auto;
+    background-color: orange;
+    position: relative;
+}
+
+/*版心栏目*/
+.openMainBusiness li {
+    float: left;
+    width: 310px;
+    height: 310px;
+    position: relative;
+    overflow: hidden;
+}
+
+/*展示文本描述*/
+.opshowtxt {
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    padding-top: 35px;
+    transition: all 0.3s;
+}
+
+.opshowtxt img {
+    width: 100px;
+    height: 100px;
+}
+
+.opshowtxt h3 {
+    font-size: 32px;
+    font-weight: 100;
+    color: #FFFFFF;
+}
+
+.opshowtxt p {
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 0 90px;
+    line-height: 24px;
+}
+
+.openMainBusiness li:hover .opshowtxt {
+    display: none;
+}
+
+/*文本描述*/
+.opbusinetxt {
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    background: rgba(33, 121, 255, 0.8);
+    text-align: left;
+    box-sizing: border-box;
+    padding: 35px 35px 0 35px;
+    left: -310px;
+    top: 0;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.openMainBusiness li:hover .opbusinetxt {
+    left: 0px;
+}
+
+.opbusinetxt h3 {
+    font-size: 32px;
+    color: #FFFFFF;
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 100;
+}
+
+.opbusinetxt h3 span {
+    padding-bottom: 10px;
+    border-bottom: 4px solid #FFE019;
+}
+
+.opbusinetxt p {
+    opacity: 0.5;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 24px;
+}
+
+.opbusinetxt .opdetails {
+    padding-top: 10px;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+/*版心之下蚂蚁金服优势表述*/
+.chooseus-data-item {
+    float: left;
+    width: 363.33px;
+    margin-top: 100px;
+    padding-left: 50px;
+    background-color: transparent;
+    text-align: left;
+}
+
+.chooseus-data-item h4 {
+    font-size: 18px;
+    font-weight: 100;
+    color: #E79700;
+}
+
+.chooseus-data-item h4 span:first-child {
+    font-size: 26px;
+}
+
+.chooseus-data-item p {
+    font-size: 14px;
+    color: #000;
+}
+
+/*成为我们的合作伙伴*/
+.teamworkpart {
+    height: 512px;
+    width: 100%;
+    text-align: center;
+    background: url(../images/financia/teamworkpart_bg_xg.png) no-repeat center center;
+    overflow: hidden;
+}
+
+.teamworkpart h1 {
+    margin-top: 44px;
+    font-weight: normal;
+    font-size: 36px;
+    color: white;
+}
+
+.borderbtom {
+    display: inline-block;
+    width: 64px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.teamwork-listbtom {
+    display: inline-block;
+    margin-top: 58px;
+}
+
+.teamwork-listbtom li {
+    width: 225px;
+    float: left;
+    margin-right: 40px;
+    position: relative;
+    background-color: transparent;
+    text-align: left;
+    color: white;
+}
+
+.teamwork-listbtom li:last-child {
+    margin-right: 0px;
+}
+
+.teamwork-listbtom li h3 {
+    font-size: 28px;
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+
+.teamwork-listbtom li h3 span:first-child {
+    font-size: 42px;
+}
+
+.txtbtomp p {
+    font-size: 14px;
+    color: #FFFFFF;
+    max-height: 130px;
+    overflow: hidden;
+    line-height: 20px;
+}
+
+.txtbtomlink {
+    margin-top: 5px;
+}
+
+.txtbtomlink a {
+    color: #00A0ED;
+    font-size: 14px;
+    display: block;
+    float: left;
+    padding-right: 15px;
+    border-right: 1px solid #00A0ED;
+    line-height: 1;
+}
+
+.txtbtomlink a:last-child {
+    border-right: 0;
+    padding-left: 15px;
+}
+
+.teamwork-listbtom li img {
+    display: inline-block;
+    width: 96px;
+    height: 4px;
+    margin: 50px auto;
+}
+
+.teamwork-listbtom .ellipsisli {
+    width: 96px;
+}
+
+.teamworkpart input[type="button"] {
+    width: 280px;
+    height: 50px;
+    background: #108EE9;
+    border-radius: 4px;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-top: 90px;
+}
+
+.teamworkpart input[type="button"]:hover {
+    background: #40a5ed;
+}
+
+/*页面底部*/
+.webbotm {
+    width: 100%;
+    height: 370px;
+    background-color: #232940;
+    overflow: hidden;
+    position: relative;
+}
+
+/*底部版心*/
+.webbotmain {
+    width: 1240px;
+    margin: 50px auto;
+    height: 286px;
+    background-color: transparent;
+}
+
+.webbotmain dl {
+    float: left;
+    padding-right: 50px;
+    width: 208px;
+}
+
+.webbotmain dl:last-child {
+    border-left: 1px solid rgba(151, 151, 151, 0.4);
+    padding-right: 0;
+    padding-left: 80px;
+    width: 126px;
+}
+
+.webbotmain dl dt {
+    font-size: 22px;
+    color: #FFFFFF;
+    padding-bottom: 20px;
+}
+
+.webbotmain dl dd {
+    padding-top: 14px;
+}
+
+.webbotmain dl dd a {
+    font-size: 16px;
+    color: #FFFFFF;
+    opacity: 0.6;
+    text-decoration: none;
+
+}
+
+.webbotmain dl dd a:hover {
+    color: #108ee9;
+}
+
+.webbotmain dl dd img {
+    width: 97px;
+    height: 97px;
+    padding-top: 12px;
+}
+
+.webbotmain dl dd p {
+    font-size: 14px;
+    color: #FFFFFF;
+    opacity: 0.6;
+    padding-top: 12px;
+}
+
+.webbotm .copyright_btom {
+    width: 100%;
+    height: 12px;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    bottom: 22px;
+    font-size: 12px;
+    color: #eee;
+    text-align: center;
+}
+
+
+
